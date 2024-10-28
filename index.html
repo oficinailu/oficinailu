@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina ilú atabaques, fabricações e conserto em geral</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('img/fundo.jpg') repeat center center fixed;
+            background-size: contain; /* Reduz a imagem e a repete para formar um padrão */
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(34, 34, 34, 0.8); /* Fundo com transparência */
+            color: #fff;
+            margin: 0;
+        }
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+            background-color: rgb(6, 134, 253); /* Fundo branco com transparência */
+            border-radius: 8px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            width: 180px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+        .descricao {
+            padding: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 15px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+        }
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+        .modal-content img.active {
+            display: block;
+        }
+        .close, .prev, .next {
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            cursor: pointer;
+            top: 10px;
+        }
+        .close { right: 15px; }
+        .prev { left: 15px; top: 50%; transform: translateY(-50%); }
+        .next { right: 15px; top: 50%; transform: translateY(-50%); }
+    </style>
+</head>
+<body>
+
+<h1>Oficina ilú atabaques, fabricações e conserto em geral</h1>
+
+<div class="catalogo">
+   <div class="item" onclick="openModal('gingademadeira')">
+        <img src="img/gingamdadeira1.png" alt="Ginga de madeira" class="active">
+        <div class="descricao">
+            <p>Ginga de madeira</p>
+            <p>Unidade R$800,00</p>
+            <p>2 Unidade sai a R$600,00 cada</p>
+        </div>
+    </div>
+
+    <!-- Modal para o Item 1 -->
+    <div id="gingademadeira" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('gingademadeira')">&times;</span>
+            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+            <span class="next" onclick="changeImage(1)">&#10095;</span>
+            <h2>Ginga de madeira</h2>
+            <img src="img/gingamdadeira1.png" alt="Ginga de madeira - Ângulo 1" class="active">
+            <img src="img/gingamadeira2.jpg" alt="Ginga de madeira - Ângulo 2">
+            <img src="img/gingamadeira3.jpg" alt="Ginga de madeira - Ângulo 3">
+            <img src="img/gingamadeira4.png" alt="Ginga de madeira - Ângulo 4">
+        </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="item" onclick="openModal('atabaques')">
+        <img src="img/atabaque1.jpg" alt="Atabaques" class="active">
+        <div class="descricao">
+            <p>Atabaques</p>
+            <p>Unidade R$500,00</p>
+        </div>
+    </div>
+
+    <!-- Modal para o Item 2 -->
+    <div id="atabaques" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('atabaques')">&times;</span>
+            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+            <span class="next" onclick="changeImage(1)">&#10095;</span>
+            <h2>Atabaques</h2>
+            <img src="img/atabaque1.jpg" alt="Atabaques - Ângulo 1" class="active">
+            <img src="img/atabaque2.jpg" alt="Atabaques - Ângulo 2">
+            <img src="img/atabaque3.jpg" alt="Atabaques - Ângulo 3">
+            <img src="img/atabaque4.jpg" alt="Atabaques - Ângulo 4">
+        </div>
+    </div>
+
+    <!-- Item 3 - Novo item tbdeitado -->
+    <div class="item" onclick="openModal('tambordeitado')">
+        <img src="img/tbdeitado1.jpg" alt="Tambor Deitado" class="active">
+        <div class="descricao">
+            <p>Tambor Deitado</p>
+            <p>Unidade R$600,00</p>
+        </div>
+    </div>
+
+    <!-- Modal para o Item 3 -->
+    <div id="tambordeitado" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tambordeitado')">&times;</span>
+            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+            <span class="next" onclick="changeImage(1)">&#10095;</span>
+            <h2>Tambor Deitado</h2>
+            <img src="img/tbdeitado1.jpg" alt="Tambor Deitado - Ângulo 1" class="active">
+            <img src="img/tbdeitado2.jpg" alt="Tambor Deitado - Ângulo 2">
+            <img src="img/tbdeitado3.jpg" alt="Tambor Deitado - Ângulo 3">
+            <img src="img/tbdeitado4.jpg" alt="Tambor Deitado - Ângulo 4">
+        </div>
+    </div>
+
+    <!-- Item 4 - Tambor de Zinco -->
+    <div class="item" onclick="openModal('tbzinco')">
+        <img src="img/tbzinco1.jpg" alt="Tambor de Zinco" class="active">
+        <div class="descricao">
+            <p>Tambor de Zinco</p>
+            <p>Unidade R$700,00</p>
+            <p>Duas Unidades R$600,00 cada</p>
+            <p>Três Unidades R$550,00 cada</p>
+        </div>
+    </div>
+
+    <!-- Modal para o Item 4 -->
+    <div id="tbzinco" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tbzinco')">&times;</span>
+            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+            <span class="next" onclick="changeImage(1)">&#10095;</span>
+            <h2>Tambor de Zinco</h2>
+            <!-- 22 Imagens para Tambor de Zinco -->
+            <img src="img/tbzinco1.jpg" alt="Tambor de Zinco - Ângulo 1" class="active">
+            <img src="img/tbzinco2.jpg" alt="Tambor de Zinco - Ângulo 2">
+            <img src="img/tbzinco3.jpg" alt="Tambor de Zinco - Ângulo 3">
+            <img src="img/tbzinco4.jpg" alt="Tambor de Zinco - Ângulo 4">
+            <img src="img/tbzinco5.jpg" alt="Tambor de Zinco - Ângulo 5">
+        </div>
+    </div>
+
+    <!-- Item 5 - Tambor de ilú -->
+    <div class="item" onclick="openModal('ilu')">
+        <img src="img/ilu1.jpg" alt="Tambor de ilú" class="active">
+        <div class="descricao">
+            <p>Tambor de ilú</p>
+            <p>Unidade R$600,00</p>
+            <p>Duas Unidades R$550,00 cada</p>
+            <p>Três Unidades R$500,00 cada</p>
+        </div>
+    </div>
+
+    <!-- Modal para o Item 5 -->
+    <br>
+    <div id="ilu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ilu')">&times;</span>
+            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+            <span class="next" onclick="changeImage(1)">&#10095;</span>
+            <h2>Tambor de ilú</h2>
+            <img src="img/ilu1.jpg" alt="Tambor de ilú - Ângulo 1" class="active">
+            <img src="img/ilu2.jpg" alt="Tambor de ilú - Ângulo 2">
+            <img src="img/ilu3.jpg" alt="Tambor de ilú - Ângulo 3">
+            <img src="img/ilu4.jpg" alt="Tambor de ilú - Ângulo 4">
+        </div>
+    </div>
+    <!-- Item 6 conga -->
+    <div class="item" onclick="openModal('Congas')">
+      <img src="img/conga1.jpg" alt="Congas" class="active">
+      <div class="descricao">
+          <p>Congas</p>
+          <p>Unidade R$800,00</p>
+          <p>Duas Unidades R$700,00 cada</p>
+          <p>Três Unidades R$600,00 cada</p>
+      </div>
+  </div>
+   </br>
+
+  <!-- Modal para o Item 6 -->
+  <div id="Congas" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('Congas')">&times;</span>
+          <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+          <span class="next" onclick="changeImage(1)">&#10095;</span>
+          <h2>Congas</h2>
+          <img src="img/conga1.jpg" alt="Congas - Ângulo 1" class="active">
+          <img src="img/conga2.jpg" alt="Congas - Ângulo 2">
+          <img src="img/conga3.jpg" alt="Congas - Ângulo 3">
+      </div>
+  </div>
+</div>
+
+<script>
+    function openModal(id) {
+        document.getElementById(id).style.display = "flex";
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+    }
+
+    function changeImage(n) {
+        let modal = document.querySelector('.modal[style*="flex"]');
+        if (modal) {
+            let images = modal.querySelectorAll('img');
+            let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + n + images.length) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
