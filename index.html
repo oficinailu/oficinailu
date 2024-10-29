@@ -79,13 +79,14 @@
             display: block;
         }
         .close, .prev, .next {
-            color: #333;
-            font-size: 24px;
-            font-weight: bold;
-            position: absolute;
-            cursor: pointer;
-            top: 10px;
-        }
+    color: #ff0000;
+    font-size: 36px; /* Aumenta o tamanho das setas */
+    font-weight: bold;
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+}
+
         .close { right: 15px; }
         .prev { left: 15px; top: 50%; transform: translateY(-50%); }
         .next { right: 15px; top: 50%; transform: translateY(-50%); }
@@ -216,33 +217,64 @@
             <img src="img/ilu3.jpg" alt="Tambor de ilú - Ângulo 3">
             <img src="img/ilu4.jpg" alt="Tambor de ilú - Ângulo 4">
         </div>
+   </div>
+    <!-- Item 6 - Congas -->
+<div class="item" onclick="openModal('congas')">
+    <img src="img/conga1.jpg" alt="Congas" class="active">
+    <div class="descricao">
+        <p>Congas</p>
+        <p>Unidade R$800,00</p>
+        <p>Duas Unidades R$700,00 cada</p>
+        <p>Três Unidades R$600,00 cada</p>
     </div>
-    <!-- Item 6 conga -->
-    <div class="item" onclick="openModal('Congas')">
-      <img src="img/conga1.jpg" alt="Congas" class="active">
-      <div class="descricao">
-          <p>Congas</p>
-          <p>Unidade R$800,00</p>
-          <p>Duas Unidades R$700,00 cada</p>
-          <p>Três Unidades R$600,00 cada</p>
-      </div>
-  </div>
-   </br>
-
-  <!-- Modal para o Item 6 -->
-  <div id="Congas" class="modal">
-      <div class="modal-content">
-          <span class="close" onclick="closeModal('Congas')">&times;</span>
-          <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-          <span class="next" onclick="changeImage(1)">&#10095;</span>
-          <h2>Congas</h2>
-          <img src="img/conga1.jpg" alt="Congas - Ângulo 1" class="active">
-          <img src="img/conga2.jpg" alt="Congas - Ângulo 2">
-          <img src="img/conga3.jpg" alt="Congas - Ângulo 3">
-      </div>
-  </div>
 </div>
 
+<!-- Modal para o Item 6 -->
+<div id="congas" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('congas')">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <h2>Congas</h2>
+        <img src="img/conga1.jpg" alt="Congas - Ângulo 1" class="active">
+        <img src="img/conga2.jpg" alt="Congas - Ângulo 2">
+        <img src="img/conga3.jpg" alt="Congas - Ângulo 3">
+    </div>
+</div>
+   </br>
+
+  <!-- Modal para o Item 7o -->
+  <div id="pe" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('pe')">&times;</span>
+          <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+          <span class="next" onclick="changeImage(1)">&#10095;</span>
+          <h2>Pé para tambores de zinco</h2>
+          <img src="img/pe1.jpg" alt="Pé para tambores de zinco - Ângulo 1" class="active">
+          <img src="img/pe2.jpg" alt="Pé para tambores de zinco - Ângulo 2">
+      </div>
+  </div>
+  <div class="item" onclick="openModal('pe')">
+    <img src="img/pe1.jpg" alt="pe" class="active">
+    <div class="descricao">
+        <p>Pé para tambores de zinco</p>
+        <p>Unidade R$250,00</p>
+    </div>
+</div>
+ </br>
+
+<!-- Modal para o Item 7 -->
+<div id="pe" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('Congas')">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <h2>Congas</h2>
+        <img src="img/pe1.jpg" alt="Pé para tambores de zinco - Ângulo 1" class="active">
+          <img src="img/pe2.jpg" alt="Pé para tambores de zinco - Ângulo 2">
+    </div>
+</div>
+</div>
 <script>
     function openModal(id) {
         document.getElementById(id).style.display = "flex";
